@@ -1,0 +1,132 @@
+.table-wrapper {
+    margin: 50px;
+    box-shadow: 0px 35px 50px rbb(27, 34, 49, 0.1);
+    display: block;
+    /*變區塊自動判斷寬度，在此加入水平橫軸*/
+    white-space: nowrap;
+    /*文字不會斷行*/
+}
+
+.table {
+    border-collapse: collapse;
+    /*separate表格會有空白*/
+    width: 100%;
+    background-color: white;
+}
+
+.table td,
+.table th {
+    text-align: center;
+    padding: 10px;
+}
+
+.table td {
+    /*除了第一行，每欄間畫右邊2px虛線*/
+    border-right: 2px dashed black;
+}
+
+.table thead th {
+    /*thead裡的th，最先顯示表格*/
+    color: brown;
+    /*第一行所有字體顏色*/
+    background: lightpink;
+    /*指定第一個標題顏色*/
+}
+
+.table thead th:nth-child(2) {
+    background: lightgoldenrodyellow;
+    /*指定第二個標題顏色*/
+}
+
+.table thead th:nth-child(3) {
+    background: lightblue;
+    /*指定第三個標題顏色*/
+}
+
+.table thead th:nth-child(4) {
+    background: lightgray;
+    /*指定第四個標題顏色*/
+}
+
+.table thead th:nth-child(5) {
+    background: lightgreen;
+    /*指定第五個標題顏色*/
+}
+
+.table ul {
+    padding: 20px;
+    margin: 0;
+    /*水平置中*/
+    text-align: left;
+    /*自靠左*/
+}
+
+.table ul li {
+    /*li底線為紅色*/
+    padding: 5px;
+    position: relative;
+    /*相對定位於父元素*/
+    list-style-type: circle;
+    /*把定義項目改為圓形*/
+}
+
+@media (max-width:769px) {
+    /*畫面小於600套用以下CSS*/
+    .table-wrapper {
+        margin: 30px 15px;
+    }
+    .table thead {
+        display: none;
+        /*不顯示原本第一行*/
+    }
+    table td {
+        display: block;
+        /*把td變區塊!!!*/
+        padding: 0;
+    }
+    .table td:before {
+        content: attr(data-title);
+        /*顯示data-title*/
+        display: inline-block;
+        /*水平排列*/
+        width: 100%;
+        font-weight: 500;
+        padding: 6px;
+        color: black;
+        background: red;
+        /*指定第一個標題顏色*/
+    }
+    .table td:nth-child(2):before {
+        background: yellow;
+        /*指定第二個標題顏色*/
+    }
+    .table td:nth-child(3):before {
+        background: blue;
+        /*指定第三個標題顏色*/
+    }
+    .table td:nth-child(4):before {
+        background: gray;
+        /*指定第四個標題顏色*/
+    }
+    .table td:nth-child(5):before {
+        background: green;
+        /*指定第五個標題顏色*/
+    }
+    table ul {
+        padding: 20px;
+        margin: 0;
+        text-align: center;
+    }
+    table ul li {
+        border-bottom: 1px solid plum;
+        padding: 5px;
+        position: relative;
+        list-style-type: square;
+    }
+}
+
+footer {
+    background: linear-gradient( to bottom, rgb(132, 185, 246), white);
+    clear: both;
+    text-align: center;
+}
